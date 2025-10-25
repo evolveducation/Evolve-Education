@@ -1,0 +1,16 @@
+<svg width="132" height="60" viewBox="0 0 132 60" fill="none" xmlns="http://www.w3.org/2000/svg">
+<rect x="60" y="60" width="60" height="60" rx="30" transform="rotate(180 60 60)" fill="#1A1A1A"/>
+<mask id="mask0_1_2139" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="18" y="18" width="24" height="24">
+<rect width="24" height="24" transform="matrix(1 -1.74846e-07 -1.74846e-07 -1 18 42)" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask0_1_2139)">
+<path d="M26.6538 24.3462L21 30L26.6538 35.6538L27.7077 34.5692L23.8884 30.75L38.7019 30.75L38.7019 29.25L23.8884 29.25L27.7076 25.4308L26.6538 24.3462Z" fill="white"/>
+</g>
+<rect x="72" width="60" height="60" rx="30" fill="#1A1A1A"/>
+<mask id="mask1_1_2139" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="90" y="18" width="24" height="24">
+<rect width="24" height="24" transform="matrix(-1 8.74228e-08 8.74228e-08 1 114 18)" fill="#D9D9D9"/>
+</mask>
+<g mask="url(#mask1_1_2139)">
+<path d="M105.346 35.6538L111 30L105.346 24.3462L104.292 25.4308L108.112 29.25L93.2981 29.25L93.2981 30.75L108.112 30.75L104.292 34.5692L105.346 35.6538Z" fill="white"/>
+</g>
+</svg>

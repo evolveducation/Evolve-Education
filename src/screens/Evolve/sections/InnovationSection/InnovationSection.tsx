@@ -1,5 +1,5 @@
-import React from "react";
 import { Button } from "../../../../components/ui/button";
+import { Link } from "react-router-dom";
 
 export const InnovationSection = (): JSX.Element => {
   return (
@@ -12,16 +12,18 @@ export const InnovationSection = (): JSX.Element => {
        
       </div>
 
-      <Button className="h-auto inline-flex items-center justify-center gap-5 pl-[46px] pr-5 py-5 bg-white hover:bg-white/90 rounded-[18px] text-black">
-        <span className="[font-family:'Space_Grotesk',Helvetica] font-medium text-2xl tracking-[0] leading-[normal] whitespace-nowrap">
-          Join the waitlist
-        </span>
-        <img
-          className="w-[43px] h-[43px]"
-          alt="Arrow downward alt"
-          src="/arrow-downward-alt-4.png"
-        />
-      </Button>
+      <Link to="/form">
+        <Button className="h-auto inline-flex items-center justify-center gap-5 pl-[46px] pr-5 py-5 bg-white hover:bg-white/90 rounded-[18px] text-black">
+          <span className="[font-family:'Space_Grotesk',Helvetica] font-medium text-2xl tracking-[0] leading-[normal] whitespace-nowrap">
+            Join the waitlist
+          </span>
+          <img
+            className="w-[43px] h-[43px]"
+            alt="Arrow downward alt"
+            src="/arrow-downward-alt-4.png"
+          />
+        </Button>
+      </Link>
     </section>
   );
 };

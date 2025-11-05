@@ -12,7 +12,7 @@ const navigationLinks = [
 
 export const HeroSection = (): JSX.Element => {
   return (
-    <section className="w-full relative mt-[200px]">
+    <section className="w-[90%] relative mt-[200px]">
       <div className="max-w-[2724px] mx-auto px-4">
         <div className="flex items-start justify-between mb-[91px]">
           <div className="flex flex-col gap-[26px]">
@@ -25,7 +25,7 @@ export const HeroSection = (): JSX.Element => {
               </div>
             </div>
             <p className="[font-family:'Space_Grotesk',Helvetica] font-normal text-[#ffffff] text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
-              Where Learners Become Leaders.🇮
+              Where Learners Become Leaders.
             </p>
           </div>
 
@@ -56,13 +56,13 @@ export const HeroSection = (): JSX.Element => {
             </div>
           </div>
 
-          <Button
+          {/* <Button
             variant="outline"
             size="icon"
             className="w-[60px] h-28 bg-black rounded-[30px] border border-solid border-[#ffffff] hover:bg-[#ffffff]/10"
           >
             <img className="w-[35px] h-[35px]" alt="East" src="/east.png" />
-          </Button>
+          </Button> */}
         </div>
 
         <footer className="flex items-center gap-0 bg-transparent">

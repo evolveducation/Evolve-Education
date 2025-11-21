@@ -22,7 +22,7 @@ export const HeroSection = (): JSX.Element => {
                 Evolved
               </div>
             </div>
-            <p className="[font-family:'Space_Grotesk',Helvetica] font-normal text-[#ffffff] text-base tracking-[0] leading-[25.6px] whitespace-nowrap">
+            <p className="[font-family:'Space_Grotesk',Helvetica] font-normal text-[#ffffff] text-base tracking-[0] leading-[25.6px]">
               Where Learners Become Leaders.
             </p>
           </div>
@@ -63,12 +63,12 @@ export const HeroSection = (): JSX.Element => {
           </Button> */}
         </div>
 
-        <footer className="flex items-center gap-0 bg-transparent">
-                    <div className="[font-family:'Space_Grotesk',Helvetica] font-medium text-[#ffffff] text-5xl md:text-9xl lg:text-[180px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
+        <footer className="flex items-center justify-between gap-0 bg-transparent overflow-y-hidden overflow-x-hidden flex-nowrap w-full">
+          <div className="[font-family:'Space_Grotesk',Helvetica] font-medium text-[#ffffff] text-5xl md:text-9xl lg:text-[180px] tracking-[0] leading-[normal] whitespace-nowrap">
             evolved build.ing
           </div>
 
-                    <div className="hidden lg:block opacity-50 [font-family:'Space_Grotesk',Helvetica] font-medium text-[#ffffff] text-5xl md:text-9xl lg:text-[180px] text-center tracking-[0] leading-[normal] whitespace-nowrap">
+          <div className="hidden lg:block opacity-50 [font-family:'Space_Grotesk',Helvetica] font-medium text-[#ffffff] text-5xl md:text-9xl lg:text-[180px] tracking-[0] leading-[normal] whitespace-nowrap">
             evolved build.ing
           </div>
         </footer>

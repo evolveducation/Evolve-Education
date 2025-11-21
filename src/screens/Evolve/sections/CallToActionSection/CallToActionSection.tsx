@@ -11,7 +11,7 @@ export const CallToActionSection = (): JSX.Element => {
   return (
     <section
       id="vision"
-      className="w-full max-w-[1200px] self-center mt-16 md:mt-[200px] flex flex-col gap-12 md:gap-[72px] px-4 md:px-0"
+      className="w-full max-w-[1200px] mx-auto mt-12 md:mt-[200px] flex flex-col gap-10 md:gap-[72px] px-4 md:px-0"
     >
       <header className="flex flex-col items-start gap-8 md:gap-[60px] w-full max-w-[716px]">
         <div className="text-xs md:text-sm text-center tracking-[2.80px] leading-[22.4px] whitespace-nowrap [font-family:'Space_Grotesk',Helvetica] font-medium text-white">
@@ -23,7 +23,7 @@ export const CallToActionSection = (): JSX.Element => {
         </h2>
       </header>
 
-      <div className="relative w-full min-h-[600px] md:min-h-[877px]">
+      <div className="relative w-full min-h-[420px] md:min-h-[877px]">
         <img
           className="hidden md:block absolute top-[277px] left-[702px] w-[468px] h-[468px]"
           alt="Group"
@@ -37,13 +37,13 @@ export const CallToActionSection = (): JSX.Element => {
         />
 
         <img
-          className="hidden md:block absolute top-0 left-[355px] w-[842px] h-[531px]"
+          className="block md:absolute md:top-0 md:left-[355px] w-full max-w-[360px] md:max-w-none md:w-[842px] h-auto md:h-[531px] mx-auto md:mx-0"
           alt="Group"
-          src="/group-626258.png"
+          src="/joinus.png"
         />
 
         <Card className="relative md:absolute md:top-[427px] left-0 w-full md:w-[842px] bg-[#141414] rounded-[20px] border-0">
-          <CardContent className="flex flex-col w-full md:w-[708px] items-start gap-8 md:gap-[60px] p-6 md:pt-12 md:pl-12 md:pb-12">
+          <CardContent className="flex flex-col w-full md:w-[708px] items-start gap-6 md:gap-[60px] p-5 md:pt-12 md:pl-12 md:pb-12">
             <div className="flex flex-col items-start gap-6 md:gap-10 w-full">
               <img
                 className="w-12 h-12 md:w-[60px] md:h-[60px]"

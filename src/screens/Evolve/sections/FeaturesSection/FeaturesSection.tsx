@@ -12,28 +12,28 @@ const audienceSegments = [
     description:
       "Introduce technical and entrepreneurial skills early—learn AI, coding, problem-solving, and startup building. Prepare for future entrepreneurship, because the sooner you plant, the faster your dreams sprout.",
     subtitle: "Elevate Your Personal Skills",
-    image: "/image-2.svg",
+    image: "/young.png",
   },
   {
     title: "Mentors & Educators",
     description:
       "Empower the next generation by sharing your expertise. Our platform provides the tools to guide aspiring innovators, track their progress, and make a lasting impact on their entrepreneurial journey.",
     subtitle: "Shape Future Leaders",
-    image: "/image-2.svg",
+    image: "/mentor.png",
   },
   {
     title: "Investors & Business-Minded Individuals",
     description:
       "Discover and connect with promising new ventures. Get early access to a curated pipeline of talent and innovative projects, and play a pivotal role in bringing groundbreaking ideas to market.",
     subtitle: "Find the Next Big Thing",
-    image: "/image-2.svg",
+    image: "/investor.png",
   },
   {
     title: "College Students & Aspiring Entrepreneurs",
     description:
       "Bridge the gap from theory to practice. Develop in-demand skills, build a strong portfolio, connect with mentors, and get the hands-on experience you need to launch your own startup.",
     subtitle: "Launch Your Career",
-    image: "/image-2.svg",
+    image: "/entrepreneur.png",
   },
 ];
 

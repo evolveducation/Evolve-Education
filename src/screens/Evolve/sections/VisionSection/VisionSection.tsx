@@ -23,6 +23,7 @@ export const VisionSection = (): JSX.Element => {
           To empower the next generation of innovators—turning students into
           skilled creators, thinkers and entrepreneurs who don't just
           learn, but build, compete and launch the startups of tomorrow.
+          While feeling like they're playing a game, not attending a class.
         </p>
       </div>
 

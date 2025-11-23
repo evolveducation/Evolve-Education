@@ -27,12 +27,12 @@ const faqData = [
   {
     id: "item-4",
     question:"What is the Battle Challenge?",
-    answer:"The Battle Challenge is a competitive feature where students and aspiring entrepreneurs face off either 1 vs 3 or 3 vs 3, showcasing their skills, ideas or projects. Winners earn recognition, rewards and a chance to stand out on the leaderboard.",
+    answer:"The Battle Challenge is a competitive feature where students and aspiring entrepreneurs face off either 1 vs 1 or 3 vs 3, showcasing their skills, ideas or projects. Winners earn recognition, rewards and a chance to stand out on the leaderboard.",
   },
   {
     id:"item-5",
     question:"How does this platform help me grow my startup idea?",
-    answer:"The platform provides tools, resources and a supportive community to help you refine, validate and launch your startup idea. You can showcase your project, participate in challenges, receive mentorship and connet with potential collaborators and investors to accelerate your growth.",
+    answer:"The platform provides tools, resources and a supportive community to help you refine, validate and launch your startup idea. You can showcase your project, participate in challenges, receive mentorship and connect with potential collaborators and investors to accelerate your growth.",
   }
 ];
 

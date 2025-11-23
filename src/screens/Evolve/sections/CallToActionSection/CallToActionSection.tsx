@@ -15,11 +15,11 @@ export const CallToActionSection = (): JSX.Element => {
     >
       <header className="flex flex-col items-start gap-8 md:gap-[60px] w-full max-w-[716px]">
         <div className="text-xs md:text-sm text-center tracking-[2.80px] leading-[22.4px] whitespace-nowrap [font-family:'Space_Grotesk',Helvetica] font-medium text-white">
-          REASON TO JOIN EVOLVE
+          REASON TO JOIN EVOLVED
         </div>
 
         <h2 className="[font-family:'Space_Grotesk',Helvetica] font-medium text-white text-4xl md:text-[64px] tracking-tight md:tracking-[0] leading-tight md:leading-[78px]">
-          Why Join Evolve
+          Why Join Evolved
         </h2>
       </header>
 

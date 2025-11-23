@@ -52,10 +52,10 @@ export const MainContentSection = (): JSX.Element => {
         <header className="flex items-center justify-between mb-24 md:mb-[186px]">
           <Link to="/" className="relative w-[101px] h-[65px] z-20">
             <div className="absolute top-0 left-0 w-[97px] opacity-60 [font-family:'Space_Grotesk',Helvetica] font-medium text-white text-2xl tracking-[0] leading-6">
-              Evolve Build.ing
+              Evolved Build.ing
             </div>
             <div className="absolute top-0 left-0 [font-family:'Space_Grotesk',Helvetica] font-medium text-white text-2xl tracking-[0] leading-[normal] whitespace-nowrap">
-              Evolve
+              Evolved
             </div>
           </Link>
 
@@ -125,10 +125,10 @@ export const MainContentSection = (): JSX.Element => {
 
         <div className="relative flex flex-col items-center text-center">
           <div className="[font-family:'Space_Grotesk',Helvetica] font-medium text-white text-sm tracking-[2.80px] leading-[22.4px] whitespace-nowrap mb-4">
-            WELCOME TO EVOLVE
+            WELCOME TO EVOLVED
           </div>
 
-          <h1 className="w-full max-w-[1020px] [font-family:'Space_Grotesk',Helvetica] font-bold text-white text-5xl md:text-7xl lg:text-8xl tracking-tight leading-tight md:leading-[110px] mb-12 md:mb-16">
+                    <h1 className="w-full max-w-[1020px] [font-family:'Space_Grotesk',Helvetica] font-bold text-white text-4xl md:text-7xl lg:text-8xl tracking-tight leading-tight md:leading-[110px] mb-8 md:mb-16">
             Where Dreamers Become Doers
           </h1>
 

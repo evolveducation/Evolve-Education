@@ -155,7 +155,7 @@ function App() {
                   {/* School/College Field */}
                   <div className="space-y-2">
                     <Label htmlFor="school" className="text-white font-medium">
-                      School/College Name <span className="text-destructive">*</span>
+                      School/College Name( Present/Graduated) <span className="text-destructive">*</span>
                     </Label>
                     <Input
                       id="school"

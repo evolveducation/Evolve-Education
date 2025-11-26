@@ -11,7 +11,7 @@ export const CallToActionSection = (): JSX.Element => {
   return (
     <section
       id="vision"
-      className="w-full max-w-[1200px] mx-auto mt-12 md:mt-[200px] flex flex-col gap-10 md:gap-[72px] px-4 md:px-0"
+      className="w-full max-w-[1200px] mx-auto mt-12 md:mt-[200px] flex flex-col gap-14 md:gap-[102px] px-8 md:px-2"
     >
       <header className="flex flex-col items-start gap-8 md:gap-[60px] w-full max-w-[716px]">
         <div className="text-xs md:text-sm text-center tracking-[2.80px] leading-[22.4px] whitespace-nowrap [font-family:'Space_Grotesk',Helvetica] font-medium text-white">
@@ -42,33 +42,52 @@ export const CallToActionSection = (): JSX.Element => {
           src="/joinus.png"
         />
 
-        <Card className="relative md:absolute md:top-[427px] left-0 w-full md:w-[842px] bg-[#141414] rounded-[20px] border-0">
+        <Card className="relative md:absolute md:top-[427px] left-0 w-full md:w-[842px] bg-[#141414] rounded-[20px] border-0 gap-2">
           <CardContent className="flex flex-col w-full md:w-[708px] items-start gap-6 md:gap-[60px] p-5 md:pt-12 md:pl-12 md:pb-12">
             <div className="flex flex-col items-start gap-6 md:gap-10 w-full">
-              <img
+              {/* <img
                 className="w-12 h-12 md:w-[60px] md:h-[60px]"
                 alt="Frame"
                 src="/frame.svg"
-              />
+              /> */}
 
               <div className="flex flex-col items-start gap-5 md:gap-7 w-full">
-                <h3 className="text-xl md:text-2xl tracking-tight md:tracking-[0] leading-normal [font-family:'Space_Grotesk',Helvetica] font-medium text-white">
+                {/* <h3 className="text-xl md:text-2xl tracking-tight md:tracking-[0] leading-normal [font-family:'Space_Grotesk',Helvetica] font-medium text-white">
                   Master in demand skills
-                </h3>
+                </h3> */}
 
                 <p className="w-full font-normal text-sm md:text-base leading-relaxed md:leading-[25.6px] [font-family:'Space_Grotesk',Helvetica] text-white tracking-[0]">
-                  Gain in-depth knowledge and hands-on experience in AI, coding,
-                  machine learning, and problem-solving to build a strong
-                  technical foundation. Along the way, develop essential skills
-                  such as critical thinking, prompt engineering, and multiple
-                  models of structured and creative thinking. Go beyond theory
-                  by learning how to ideate and launch.
+                1. Master in-demand skills: Learn cutting-edge skills in AI, coding, and entrepreneurship to stay future-ready.<br/>
+
+
+2. Gamified Learning & Rewards: Learn like a game—earn points, unlock levels, and redeem real rewards.<br/>
+
+
+3. Build your professional profile: Showcase verified skills and achievements to stand out in the real world.<br/>
+
+
+4. Join a vibrant community: Connect, collaborate, and grow with ambitious students and innovators.<br/>
+
+
+5. Discover opportunities & network: Meet co-founders, mentors, and early supporters to fuel your journey.<br/>
+
+
+6. Launch your own startup: Turn ideas into reality with mentorship, funding, and launch support.<br/>
+
+
+7. Experience real growth & rewards: Convert your learning progress into real-world impact and recognition.<br/>
+
+
+8. Continuous growth: Keep progressing through learning, networking, competitions, and rewards.<br/>
+
+
+9. Competitions & engagement: Join quizzes, hackathons, and pitch battles—and get feedback that counts.
                 </p>
               </div>
             </div>
 
-            <nav
-              className="flex items-center gap-2"
+            {/* <nav
+              className="flex items-center gap-1"
               aria-label="Slide navigation"
             >
               {navigationDots.map((dot, index) => (
@@ -81,7 +100,7 @@ export const CallToActionSection = (): JSX.Element => {
                   aria-current={dot.active ? "true" : "false"}
                 />
               ))}
-            </nav>
+            </nav> */}
           </CardContent>
         </Card>
       </div>

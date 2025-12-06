@@ -1,4 +1,4 @@
-import React from "react";
+import { useEffect, useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export const CallToActionSection = (): JSX.Element => {
@@ -7,6 +7,74 @@ export const CallToActionSection = (): JSX.Element => {
     { active: false },
     { active: false },
   ];
+
+  const reasons = [
+    {
+      title: "Master in-demand skills:",
+      description:
+        "Learn cutting-edge skills in AI, coding, and entrepreneurship to stay future-ready.",
+    },
+    {
+      title: "Gamified Learning & Rewards:",
+      description:
+        "Learn like a game—earn points, unlock levels, and redeem real rewards.",
+    },
+    {
+      title: "Build your professional profile:",
+      description:
+        "Showcase verified skills and achievements to stand out in the real world.",
+    },
+    {
+      title: "Join a vibrant community:",
+      description:
+        "Connect, collaborate, and grow with ambitious students and innovators.",
+    },
+    {
+      title: "Discover opportunities & network:",
+      description:
+        "Meet co-founders, mentors, and early supporters to fuel your journey.",
+    },
+    {
+      title: "Launch your own startup:",
+      description:
+        "Turn ideas into reality with mentorship, funding, and launch support.",
+    },
+    {
+      title: "Experience real growth & rewards:",
+      description:
+        "Convert your learning progress into real-world impact and recognition.",
+    },
+    {
+      title: "Continuous growth:",
+      description:
+        "Keep progressing through learning, networking, competitions, and rewards.",
+    },
+    {
+      title: "Competitions & engagement:",
+      description:
+        "Join quizzes, hackathons, and pitch battles—and get feedback that counts.",
+    },
+  ];
+
+  const [isAnimated, setIsAnimated] = useState(false);
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const itemsPerPage = 3;
+
+  useEffect(() => {
+    const timeout = setTimeout(() => {
+      setIsAnimated(true);
+    }, 150);
+
+    return () => clearTimeout(timeout);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentIndex((prev) => (prev + itemsPerPage) % reasons.length);
+    }, 5000);
+
+    return () => clearInterval(interval);
+  }, [itemsPerPage, reasons.length]);
 
   return (
     <section
@@ -23,7 +91,7 @@ export const CallToActionSection = (): JSX.Element => {
         </h2>
       </header>
 
-      <div className="relative w-full min-h-[420px] md:min-h-[877px]">
+      <div className="relative w-full min-h-[420px] md:min-h-[780px]">
         <img
           className="hidden md:block absolute top-[277px] left-[702px] w-[468px] h-[468px]"
           alt="Group"
@@ -42,51 +110,52 @@ export const CallToActionSection = (): JSX.Element => {
           src="/joinus.png"
         />
 
-        <Card className="relative md:absolute md:top-[427px] left-0 w-full md:w-[842px] bg-[#141414] rounded-[20px] border-0 gap-2">
-          <CardContent className="flex flex-col w-full md:w-[708px] items-start gap-6 md:gap-[60px] p-5 md:pt-12 md:pl-12 md:pb-12">
+        <Card className="relative md:absolute md:top-[520px] left-0 w-full md:w-[842px] bg-[#141414] rounded-[20px] border-0 gap-2 shadow-[0_0_40px_rgba(0,0,0,0.6)] transition-transform transition-shadow duration-300 ease-out hover:-translate-y-1 hover:shadow-[0_0_60px_rgba(0,0,0,0.9)] md:h-[290px]">
+          <CardContent className="flex flex-col w-full md:w-[708px] items-start gap-6 md:gap-[40px] p-5 md:pt-8 md:pl-8 md:pb-8 h-full">
             <div className="flex flex-col items-start gap-6 md:gap-10 w-full">
               {/* <img
                 className="w-12 h-12 md:w-[60px] md:h-[60px]"
                 alt="Frame"
                 src="/frame.svg"
               /> */}
-
               <div className="flex flex-col items-start gap-5 md:gap-7 w-full">
-                {/* <h3 className="text-xl md:text-2xl tracking-tight md:tracking-[0] leading-normal [font-family:'Space_Grotesk',Helvetica] font-medium text-white">
-                  Master in demand skills
-                </h3> */}
+                <ol className="w-full grid gap-4 md:gap-6 md:grid-cols-3 list-none font-normal text-sm md:text-base leading-relaxed md:leading-[25.6px] [font-family:'Space_Grotesk',Helvetica] text-white tracking-[0]">
+                  {Array.from({ length: itemsPerPage }).map((_, localIndex) => {
+                    const reasonIndex = (currentIndex + localIndex) % reasons.length;
+                    const reason = reasons[reasonIndex];
+                    return (
+                      <li
+                        key={reason.title}
+                        className={`transition-all duration-500 ease-out rounded-2xl bg-white/5/0 border border-white/5 hover:border-white/20 px-4 py-4 md:py-5 flex flex-col gap-3 shadow-[0_0_0_rgba(0,0,0,0)] hover:shadow-[0_18px_45px_rgba(0,0,0,0.55)] ${
+                          isAnimated
+                            ? "opacity-100 animate-[pulse_5s_ease-in-out_infinite]"
+                            : "opacity-0"
+                        }`}
+                        style={{ transitionDelay: `${localIndex * 80}ms` }}
+                      >
+                        <div className="flex items-center gap-3">
+                          <span className="flex h-8 w-8 items-center justify-center rounded-full bg-gradient-to-br from-[#4ADE80] via-[#22D3EE] to-[#6366F1] text-xs font-semibold text-black shadow-[0_0_25px_rgba(99,102,241,0.8)]">
+                            {reasonIndex + 1}
+                          </span>
+                          
+                        </div>
 
-                <p className="w-full font-normal text-sm md:text-base leading-relaxed md:leading-[25.6px] [font-family:'Space_Grotesk',Helvetica] text-white tracking-[0]">
-                1. Master in-demand skills: Learn cutting-edge skills in AI, coding, and entrepreneurship to stay future-ready.<br/>
-
-
-2. Gamified Learning & Rewards: Learn like a game—earn points, unlock levels, and redeem real rewards.<br/>
-
-
-3. Build your professional profile: Showcase verified skills and achievements to stand out in the real world.<br/>
-
-
-4. Join a vibrant community: Connect, collaborate, and grow with ambitious students and innovators.<br/>
-
-
-5. Discover opportunities & network: Meet co-founders, mentors, and early supporters to fuel your journey.<br/>
-
-
-6. Launch your own startup: Turn ideas into reality with mentorship, funding, and launch support.<br/>
-
-
-7. Experience real growth & rewards: Convert your learning progress into real-world impact and recognition.<br/>
-
-
-8. Continuous growth: Keep progressing through learning, networking, competitions, and rewards.<br/>
-
-
-9. Competitions & engagement: Join quizzes, hackathons, and pitch battles—and get feedback that counts.
-                </p>
+                        <div className="flex flex-col gap-1">
+                          <div className="font-semibold text-sm md:text-[15px]">
+                            {reason.title}
+                          </div>
+                          <p className="text-xs md:text-sm text-white/80">
+                            {reason.description}
+                          </p>
+                        </div>
+                      </li>
+                    );
+                  })}
+                </ol>
               </div>
             </div>
-
-            {/* <nav
+{/* 
+            <nav
               className="flex items-center gap-1"
               aria-label="Slide navigation"
             >

@@ -30,15 +30,15 @@ const testimonialData = [
 
 const statsData = [
   {
-    value: "1k+",
-    description: "Already Registered Candidates",
+    value: "200+",
+    description: "Already in waitlist",
   },
   {
-    value: "100K+",
+    value: "50,000+",
     description: "Expected Reach in 2026",
   },
   {
-    value: "100+",
+    value: "10+",
     description: "Mentors and industry experts",
   },
   // {

@@ -2,10 +2,16 @@ import { useEffect, useState } from "react";
 import { Card, CardContent } from "../../../../components/ui/card";
 
 export const CallToActionSection = (): JSX.Element => {
-  const navigationDots = [
-    { active: true },
-    { active: false },
-    { active: false },
+  const reasons = [
+    { title: "Master in-demand skills:", description: "Learn cutting-edge skills in AI, coding, and entrepreneurship." },
+    { title: "Gamified Learning & Rewards:", description: "Learn like a game—earn points and redeem rewards." },
+    { title: "Build your professional profile:", description: "Showcase verified skills to stand out in the real world." },
+    { title: "Join a vibrant community:", description: "Connect and grow with ambitious students and innovators." },
+    { title: "Discover opportunities & network:", description: "Meet co-founders, mentors, and early supporters." },
+    { title: "Launch your own startup:", description: "Turn ideas into reality with mentorship and funding." },
+    { title: "Experience real growth & rewards:", description: "Convert progress into real-world impact and recognition." },
+    { title: "Continuous growth:", description: "Progress through learning, networking, and competitions." },
+    { title: "Competitions & engagement:", description: "Join quizzes, hackathons, and pitch battles." },
   ];
 
   const reasons = [
@@ -79,34 +85,34 @@ export const CallToActionSection = (): JSX.Element => {
   return (
     <section
       id="vision"
-      className="w-full max-w-[1200px] mx-auto mt-12 md:mt-[200px] flex flex-col gap-14 md:gap-[102px] px-8 md:px-2"
+      className="w-full h-full max-w-[1200px] mx-auto mt-12 md:mt-[20px] flex flex-col gap-10 md:gap-[15px] px-6 md:px-2"
     >
-      <header className="flex flex-col items-start gap-8 md:gap-[60px] w-full max-w-[716px]">
-        <div className="text-xs md:text-sm text-center tracking-[2.80px] leading-[22.4px] whitespace-nowrap [font-family:'Space_Grotesk',Helvetica] font-medium text-white">
+      <header className="flex flex-col items-start gap-4 md:gap-[60px] w-full max-w-[716px]">
+        <div className="text-[10px] md:text-sm tracking-[2.80px] leading-[22.4px] uppercase [font-family:'Space_Grotesk',Helvetica] font-medium text-white">
           REASON TO JOIN EVOLVED
         </div>
 
-        <h2 className="[font-family:'Space_Grotesk',Helvetica] font-medium text-white text-4xl md:text-[64px] tracking-tight md:tracking-[0] leading-tight md:leading-[78px]">
+        <h2 className="[font-family:'Space_Grotesk',Helvetica] font-medium text-white text-3xl md:text-[64px] tracking-tight leading-tight md:leading-[78px]">
           Why Join Evolved
         </h2>
       </header>
 
       <div className="relative w-full min-h-[420px] md:min-h-[780px]">
         <img
-          className="hidden md:block absolute top-[277px] left-[702px] w-[468px] h-[468px]"
-          alt="Group"
+          className="hidden md:block absolute top-[277px] left-[702px] w-[468px] h-[468px] pointer-events-none"
+          alt="Decoration"
           src="/group-626239.png"
         />
-
         <img
-          className="hidden md:block absolute top-[102px] left-[69px] w-[468px] h-[468px]"
-          alt="Frame"
+          className="hidden md:block absolute top-[102px] left-[69px] w-[468px] h-[468px] pointer-events-none"
+          alt="Decoration"
           src="/frame-626240.svg"
         />
 
+        {/* Main Image */}
         <img
-          className="block md:absolute md:top-0 md:left-[355px] w-full max-w-[360px] md:max-w-none md:w-[842px] h-auto md:h-[531px] mx-auto md:mx-0"
-          alt="Group"
+          className="relative md:absolute md:top-0 md:left-[355px] w-full max-w-[300px] md:max-w-none md:w-[842px] h-auto md:h-[531px] mx-auto z-10 mb-8 md:mb-0"
+          alt="Join Evolved"
           src="/joinus.png"
         />
 

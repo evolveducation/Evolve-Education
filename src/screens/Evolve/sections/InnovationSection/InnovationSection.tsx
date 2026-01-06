@@ -20,7 +20,7 @@ export const InnovationSection = (): JSX.Element => {
           <img
             className="w-[43px] h-[43px]"
             alt="Arrow downward alt"
-            src="/arrow-downward-alt-4.png"
+            src="/arrow_downward_alt.svg"
           />
         </Button>
       </Link>

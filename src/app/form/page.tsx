@@ -5,8 +5,9 @@ import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
-import { Loader2Icon, CheckCircle2Icon } from 'lucide-react';
+import { Loader2Icon, CheckCircle2Icon, Sparkles, MessageSquareHeart } from 'lucide-react';
 import { supabase } from '@/supabaseClient';
+
 interface FeedbackFormData {
   name: string;
   email: string;
@@ -28,176 +29,141 @@ function App() {
 
   const onSubmit = async (data: FeedbackFormData) => {
     setIsSubmitting(true);
-    
     try {
       const { error } = await supabase
-        .from('feedback') // Make sure this is the name of your table in Supabase
+        .from('feedback')
         .insert([data]);
 
-      if (error) {
-        throw error;
-      }
+      if (error) throw error;
 
       setIsSubmitted(true);
       setTimeout(() => {
         setIsSubmitted(false);
         reset();
-      }, 3000);
-
+      }, 4000);
     } catch (error) {
       console.error('Error submitting feedback:', error);
-      // Optionally, you can add state to display an error message to the user
+      alert("Something went wrong. Please try again!");
     } finally {
       setIsSubmitting(false);
     }
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col">
-      {/* Main Content */}
-      <main className="flex-1 flex items-center justify-center px-4 py-8 sm:py-16 lg:px-8">
-        <div className="w-full max-w-2xl">
-          <Card className="bg-card border-border">
-            <CardHeader className="space-y-2 pb-6 sm:pb-8">
-              <CardTitle className="text-2xl sm:text-3xl font-bold text-center text-black">
-                Submit Your Feedback
+    <div className="min-h-screen bg-[#030303] text-slate-200 flex flex-col relative overflow-hidden">
+      {/* Decorative Background Elements */}
+      <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-blue-500/10 blur-[120px] rounded-full" />
+      <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-purple-500/10 blur-[120px] rounded-full" />
+
+      <main className="flex-1 flex items-center justify-center px-6 py-12 relative z-10">
+        <div className="w-full max-w-xl">
+          <Card className="bg-black/40 border-white/10 backdrop-blur-xl shadow-2xl">
+            <CardHeader className="space-y-4 pb-8 text-center">
+              <div className="mx-auto w-12 h-12 bg-white/5 border border-white/10 rounded-xl flex items-center justify-center mb-2">
+                <MessageSquareHeart className="w-6 h-6 text-purple-400" />
+              </div>
+              <CardTitle className="text-3xl sm:text-4xl font-extrabold tracking-tight text-white bg-clip-text text-transparent bg-gradient-to-b from-white to-gray-400">
+                Spill the Beans.
               </CardTitle>
-              <CardDescription className="text-center text-gray-300 text-sm sm:text-base">
-                We value your input. Please share your thoughts with us.
+              <CardDescription className="text-gray-400 text-base italic">
+                "The good, the bad, and the brutally honest. We're all ears."
               </CardDescription>
             </CardHeader>
-            <CardContent className="p-4 sm:p-6">
+            
+            <CardContent>
               {isSubmitted ? (
-                <div className="flex flex-col items-center justify-center py-8 sm:py-12 space-y-4 animate-in fade-in duration-300">
-                  <CheckCircle2Icon className="w-12 h-12 sm:w-16 sm:h-16 text-green-500" strokeWidth={1.5} />
-                  <h3 className="text-xl sm:text-2xl font-semibold text-white text-center">Thank you for your feedback!</h3>
-                  <p className="text-gray-300 text-center text-sm sm:text-base">
-                    Your submission has been received successfully.
+                <div className="flex flex-col items-center justify-center py-12 space-y-4 animate-in zoom-in-95 duration-500">
+                  <div className="relative">
+                    <div className="absolute inset-0 bg-green-500/20 blur-xl rounded-full" />
+                    <CheckCircle2Icon className="w-20 h-20 text-green-400 relative z-10" strokeWidth={1} />
+                  </div>
+                  <h3 className="text-2xl font-bold text-white tracking-tight">Message Received!</h3>
+                  <p className="text-gray-400 text-center max-w-[280px]">
+                    Thanks for being awesome. Your feedback helps us build something better.
                   </p>
                 </div>
               ) : (
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-6">
+                <form onSubmit={handleSubmit(onSubmit)} className="space-y-5">
+                  
                   {/* Name Field */}
-                  <div className="space-y-2">
-                    <Label htmlFor="name" className="text-white font-medium">
-                      Name <span className="text-destructive">*</span>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="name" className="text-gray-300 ml-1 text-sm font-medium">
+                      What should we call you? <span className="text-purple-400">*</span>
                     </Label>
                     <Input
                       id="name"
-                      type="text"
-                      placeholder="Enter your full name"
-                      className="bg-neutral border-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-ring focus:border-ring transition-all duration-200"
-                      {...register('name', { required: 'Name is required' })}
-                      aria-required="true"
-                      aria-invalid={errors.name ? 'true' : 'false'}
+                      placeholder="e.g. Alex Grayson"
+                      className="bg-white/5 border-white/10 text-white h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all shadow-inner"
+                      {...register('name', { required: 'We need to know who you are!' })}
                     />
-                    {errors.name && (
-                      <p className="text-sm text-destructive" role="alert">
-                        {errors.name.message}
-                      </p>
-                    )}
+                    {errors.name && <p className="text-xs text-red-400 mt-1 ml-1">{errors.name.message}</p>}
                   </div>
 
-                  {/* Email Field */}
-                  <div className="space-y-2">
-                    <Label htmlFor="email" className="text-white font-medium">
-                      Email <span className="text-destructive">*</span>
-                    </Label>
-                    <Input
-                      id="email"
-                      type="email"
-                      placeholder="your.email@example.com"
-                      className="bg-neutral border-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-ring focus:border-ring transition-all duration-200"
-                      {...register('email', {
-                        required: 'Email is required',
-                        pattern: {
-                          value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i,
-                          message: 'Invalid email address',
-                        },
-                      })}
-                      aria-required="true"
-                      aria-invalid={errors.email ? 'true' : 'false'}
-                    />
-                    {errors.email && (
-                      <p className="text-sm text-destructive" role="alert">
-                        {errors.email.message}
-                      </p>
-                    )}
-                  </div>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                    {/* Email Field */}
+                    <div className="space-y-1.5">
+                      <Label htmlFor="email" className="text-gray-300 ml-1 text-sm font-medium">
+                        Your digital hideout (Email) <span className="text-purple-400">*</span>
+                      </Label>
+                      <Input
+                        id="email"
+                        type="email"
+                        placeholder="you@example.com"
+                        className="bg-white/5 border-white/10 text-white h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
+                        {...register('email', {
+                          required: 'Where should we reply?',
+                          pattern: { value: /^\S+@\S+$/i, message: 'That email looks a bit funky' },
+                        })}
+                      />
+                      {errors.email && <p className="text-xs text-red-400 mt-1 ml-1">{errors.email.message}</p>}
+                    </div>
 
-                  {/* Phone Field */}
-                  <div className="space-y-2">
-                    <Label htmlFor="phone" className="text-white font-medium">
-                      Phone Number <span className="text-destructive">*</span>
-                    </Label>
-                    <Input
-                      id="phone"
-                      type="tel"
-                      placeholder="+1 (555) 123-4567"
-                      className="bg-neutral border-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-ring focus:border-ring transition-all duration-200"
-                      {...register('phone', {
-                        required: 'Phone number is required',
-                        pattern: {
-                          value: /^[+]?[(]?[0-9]{1,4}[)]?[-\s.]?[(]?[0-9]{1,4}[)]?[-\s.]?[0-9]{1,9}$/,
-                          message: 'Invalid phone number',
-                        },
-                      })}
-                      aria-required="true"
-                      aria-invalid={errors.phone ? 'true' : 'false'}
-                    />
-                    {errors.phone && (
-                      <p className="text-sm text-destructive" role="alert">
-                        {errors.phone.message}
-                      </p>
-                    )}
+                    {/* Phone Field */}
+                    <div className="space-y-1.5">
+                      <Label htmlFor="phone" className="text-gray-300 ml-1 text-sm font-medium">
+                        Your ring-a-ding <span className="text-purple-400">*</span>
+                      </Label>
+                      <Input
+                        id="phone"
+                        type="tel"
+                        placeholder="Phone number"
+                        className="bg-white/5 border-white/10 text-white h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
+                        {...register('phone', { required: 'Just in case we need to call!' })}
+                      />
+                      {errors.phone && <p className="text-xs text-red-400 mt-1 ml-1">{errors.phone.message}</p>}
+                    </div>
                   </div>
 
                   {/* School/College Field */}
-                  <div className="space-y-2">
-                    <Label htmlFor="school" className="text-white font-medium">
-                      School/College Name( Present/Graduated) <span className="text-destructive">*</span>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="school" className="text-gray-300 ml-1 text-sm font-medium">
+                      Where do you learn your magic? (School/College) <span className="text-purple-400">*</span>
                     </Label>
                     <Input
                       id="school"
-                      type="text"
-                      placeholder="Enter your institution name"
-                      className="bg-neutral border-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-ring focus:border-ring transition-all duration-200"
-                      {...register('school', { required: 'School/College name is required' })}
-                      aria-required="true"
-                      aria-invalid={errors.school ? 'true' : 'false'}
+                      placeholder="The University of Life (or actual name)"
+                      className="bg-white/5 border-white/10 text-white h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
+                      {...register('school', { required: 'Your alma mater is required' })}
                     />
-                    {errors.school && (
-                      <p className="text-sm text-destructive" role="alert">
-                        {errors.school.message}
-                      </p>
-                    )}
+                    {errors.school && <p className="text-xs text-red-400 mt-1 ml-1">{errors.school.message}</p>}
                   </div>
 
                   {/* Feedback Field */}
-                  <div className="space-y-2">
-                    <Label htmlFor="feedback" className="text-white font-medium">
-                      feedback <span className="text-destructive">*</span>
+                  <div className="space-y-1.5">
+                    <Label htmlFor="feedback" className="text-gray-300 ml-1 text-sm font-medium">
+                      The Deep Dive (Feedback) <span className="text-purple-400">*</span>
                     </Label>
                     <Textarea
                       id="feedback"
-                      placeholder="Share your thoughts, suggestions, or concerns..."
-                      rows={6}
-                      className="bg-neutral border-input text-black placeholder:text-gray-400 focus:ring-2 focus:ring-ring focus:border-ring transition-all duration-200 resize-none"
+                      placeholder="Tell us everything. Don't hold back..."
+                      rows={5}
+                      className="bg-white/5 border-white/10 text-white focus:ring-purple-500/50 focus:border-purple-500/50 transition-all resize-none shadow-inner"
                       {...register('feedback', {
-                        required: 'Feedback is required',
-                        minLength: {
-                          value: 10,
-                          message: 'Feedback must be at least 10 characters',
-                        },
+                        required: 'The floor is yours!',
+                        minLength: { value: 10, message: 'Go on, tell us a bit more (min 10 chars)' },
                       })}
-                      aria-required="true"
-                      aria-invalid={errors.feedback ? 'true' : 'false'}
                     />
-                    {errors.feedback && (
-                      <p className="text-sm text-destructive" role="alert">
-                        {errors.feedback.message}
-                      </p>
-                    )}
+                    {errors.feedback && <p className="text-xs text-red-400 mt-1 ml-1">{errors.feedback.message}</p>}
                   </div>
 
                   {/* Submit Button */}
@@ -205,15 +171,17 @@ function App() {
                     <Button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-primary text-primary-foreground hover:bg-primary/90 font-normal text-base h-12 transition-all duration-200 ease-in"
+                      className="w-full bg-white text-black hover:bg-gray-200 font-bold text-base h-14 rounded-xl transition-all duration-300 group shadow-[0_0_20px_rgba(255,255,255,0.1)]"
                     >
                       {isSubmitting ? (
                         <>
-                          <Loader2Icon className="mr-2 h-5 w-5 animate-spin" strokeWidth={1.5} />
-                          Submitting...
+                          <Loader2Icon className="mr-2 h-5 w-5 animate-spin" />
+                          Sending to the Cloud...
                         </>
                       ) : (
-                        'Submit Feedback'
+                        <span className="flex items-center justify-center">
+                          Send Feedback <Sparkles className="ml-2 w-4 h-4 group-hover:animate-pulse" />
+                        </span>
                       )}
                     </Button>
                   </div>
@@ -221,6 +189,9 @@ function App() {
               )}
             </CardContent>
           </Card>
+          <p className="text-center mt-8 text-gray-600 text-xs tracking-widest uppercase">
+            Encrypted & Secure Submission
+          </p>
         </div>
       </main>
     </div>

@@ -72,9 +72,7 @@ export const FooterSection = (): JSX.Element => {
             TESTIMONIALS
           </div>
 
-          <h2 className="mt-8 md:mt-[70px] max-w-full md:max-w-[504px] [font-family:'Space_Grotesk',Helvetica] font-medium text-white text-3xl md:text-[64px] tracking-tight md:tracking-[0] leading-tight md:leading-[78px]">
-            Early User Feedback
-          </h2>
+          <h2 className="mt-8 md:mt-[70px] max-w-full md:max-w-[504px] [font-family:'Space_Grotesk',Helvetica] font-medium text-white text-3xl md:text-[64px] tracking-tight md:tracking-[0] leading-tight md:leading-[78px]">Early User Feedback</h2>
 
           <img
             className="hidden lg:block absolute top-[15px] left-[401px] w-[117px] h-[117px]"
@@ -152,9 +150,9 @@ export const FooterSection = (): JSX.Element => {
           </CardContent>
         </Card>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 text-center sm:text-left">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12 text-center">
           {statsData.map((stat, index) => (
-            <div key={index} className="flex flex-col items-center sm:items-start gap-4 md:gap-9">
+            <div key={index} className="flex flex-col items-center gap-4 md:gap-9">
               <div className="[font-family:'Space_Grotesk',Helvetica] font-medium text-white text-4xl md:text-5xl tracking-tight md:tracking-[0] leading-tight md:leading-[78px]">
                 {stat.value}
               </div>

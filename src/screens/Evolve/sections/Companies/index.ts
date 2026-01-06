@@ -1,0 +1,1 @@
+export { MainLandingSection as Companies } from "./Companies";

@@ -9,6 +9,7 @@ import { InnovationSection } from "./sections/InnovationSection";
 import { MainContentSection } from "./sections/MainContentSection";
 import { TestimonialsSection } from "./sections/TestimonialsSection";
 import { VisionSection } from "./sections/VisionSection";
+import { Companies } from "./sections/Companies";
 
 export const Evolve = (): JSX.Element => {
   return (
@@ -21,6 +22,7 @@ export const Evolve = (): JSX.Element => {
       <HeaderSection />
       <FooterSection />
       <TestimonialsSection />
+      <Companies />
       <InnovationSection />
       <HeroSection />
     </main>

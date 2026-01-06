@@ -79,7 +79,7 @@ export const MainContentSection = (): JSX.Element => {
             <img
               className="w-6 h-6"
               alt="Arrow downward alt"
-              src="/arrow-downward-alt-3.png"
+              src="/arrow_downward_alt.svg"
             />
           </Button>
           </Link>
@@ -146,7 +146,7 @@ export const MainContentSection = (): JSX.Element => {
                 <img
                   className="w-6 h-6"
                   alt="Arrow downward alt"
-                  src="/arrow-downward-alt-1.png"
+                  src="/arrow_downward_alt.svg"
                 />
               </Button>
             </Link>
@@ -158,7 +158,7 @@ export const MainContentSection = (): JSX.Element => {
                 <img
                   className="w-6 h-6"
                   alt="Arrow downward alt"
-                  src="/arrow-downward-alt-2.png"
+                  src="/arrow_downward_alt (2).svg"
                 />
               </Button>
             </Link>

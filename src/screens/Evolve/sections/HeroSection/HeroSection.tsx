@@ -1,11 +1,11 @@
 
 const navigationLinks = [
-  { label: "How it works", column: 1 },
-  { label: "Services", column: 1 },
-  { label: "Pricing", column: 1 },
-  { label: "FAQs", column: 2 },
-  { label: "Mission", column: 2 },
-  { label: "Contact", column: 2 },
+  { label: "How it works", column: 1, href: "#how-it-works" },
+  { label: "Services", column: 1, href: "#vision" },
+  { label: "Pricing", column: 1, href: "/form" },
+  { label: "FAQs", column: 2, href: "#FAQ" },
+  { label: "Mission", column: 2, href: "#vision" },
+  { label: "Contact", column: 2, href: "/form" },
 ];
 
 export const HeroSection = (): JSX.Element => {
@@ -32,24 +32,26 @@ export const HeroSection = (): JSX.Element => {
               {navigationLinks
                 .filter((link) => link.column === 1)
                 .map((link, index) => (
-                  <button
+                  <a
                     key={index}
+                    href={link.href}
                     className="opacity-60 [font-family:'Space_Grotesk',Helvetica] font-normal text-[#ffffff] text-base tracking-[0] leading-[25.6px] whitespace-nowrap text-left hover:opacity-100 transition-opacity"
                   >
                     {link.label}
-                  </button>
+                  </a>
                 ))}
             </div>
             <div className="flex flex-col gap-[44px]">
               {navigationLinks
                 .filter((link) => link.column === 2)
                 .map((link, index) => (
-                  <button
+                  <a
                     key={index}
+                    href={link.href}
                     className="opacity-60 [font-family:'Space_Grotesk',Helvetica] font-normal text-[#ffffff] text-base tracking-[0] leading-[25.6px] whitespace-nowrap text-left hover:opacity-100 transition-opacity"
                   >
                     {link.label}
-                  </button>
+                  </a>
                 ))}
             </div>
           </div>

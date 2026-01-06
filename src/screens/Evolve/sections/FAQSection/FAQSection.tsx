@@ -7,30 +7,30 @@ const featureCards = [
     title: "Explore & Learn",
     description:
       "Learn in-depth skills: AI, Coding, Machine Learning, \nProblem-Solving & Startup Building.",
-    icon: "/calendar-today.png",
+    icon: "/calendar-blank.svg",
   },
   {
     title: "Earn Points & Rewards",
     description:
       "Complete courses, earn points, and redeem real rewards\n—gift cards, coupons, merchandise, and more.",
-    icon: "/design-services.png",
+    icon: "/pencil-ruler.svg",
   },
   {
     title: "Compete & Win",
     description:
       "Join interactive battles—1v1, 3v3, or group challenges. \nWin rewards & recognition.",
-    icon: "/comment.png",
+    icon: "/exam.svg",
   },
   {
     title: "Join Communities",
     description: "Connect with peers, share knowledge, and expand your skills.",
-    icon: "/rocket-launch.png",
+    icon: "/rocket-launch.svg",
   },
 ];
 
 export const FAQSection = (): JSX.Element => {
   return (
-    <section id="how-it-works" className="relative w-full flex justify-center mt-40">
+    <section id="FAQ" className="relative w-full flex justify-center mt-40">
       <div className="relative w-full max-w-[1202px] px-4">
         <div className="flex flex-col lg:flex-row gap-8 lg:gap-16">
           <div className="flex-shrink-0 lg:w-[476px]">

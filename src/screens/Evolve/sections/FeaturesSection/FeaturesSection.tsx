@@ -36,6 +36,7 @@ const audienceSegments = [
     image: "/entrepreneur.png",
   },
 ];
+// ... (imports and audienceSegments array remain the same)
 
 export const FeaturesSection = (): JSX.Element => {
   const [openIndex, setOpenIndex] = useState<number | null>(0);
@@ -74,7 +75,8 @@ export const FeaturesSection = (): JSX.Element => {
               <div className="space-y-0">
                 {audienceSegments.map((segment, index) => (
                   <div key={index}>
-                    {index > 0 && <Separator className="bg-white/10 h-px" />}
+                    {/* This adds a line ABOVE every section */}
+                    <Separator className="bg-white/10 h-px" />
 
                     {/* Mobile Layout */}
                     <div className="lg:hidden py-6">
@@ -123,7 +125,7 @@ export const FeaturesSection = (): JSX.Element => {
                                 <img
                                   className="w-5 h-5"
                                   alt="Arrow icon"
-                                  src="/arrow-downward-alt.png"
+                                  src="/arrow_downward_alt (1).svg"
                                 />
                               </Button>
                             </Link>
@@ -158,7 +160,7 @@ export const FeaturesSection = (): JSX.Element => {
                                   <img
                                     className="w-6 h-6"
                                     alt="Arrow icon"
-                                    src="/arrow-downward-alt.png"
+                                    src="/arrow_downward_alt (1).svg"
                                   />
                                 </Button>
                               </Link>
@@ -186,6 +188,8 @@ export const FeaturesSection = (): JSX.Element => {
                     </div>
                   </div>
                 ))}
+                {/* This adds a final line BELOW the very last section */}
+                <Separator className="bg-white/10 h-px" />
               </div>
             </div>
           </CardContent>

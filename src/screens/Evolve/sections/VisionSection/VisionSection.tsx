@@ -1,4 +1,3 @@
-import React from "react";
 
 export const VisionSection = (): JSX.Element => {
   const images = [
@@ -13,7 +12,7 @@ export const VisionSection = (): JSX.Element => {
   ];
 
   return (
-    <section className="w-full relative mt-16 md:mt-28 lg:mt-[174px] flex flex-col items-center gap-8 md:gap-12 lg:gap-[72px] px-4 sm:px-6 lg:px-8">
+    <section id="vision" className="w-full relative mt-16 md:mt-28 lg:mt-[174px] flex flex-col items-center gap-8 md:gap-12 lg:gap-[72px] px-4 sm:px-6 lg:px-8">
       <div className="w-full flex flex-col items-center gap-6 md:gap-8 lg:gap-[60px] max-w-7xl mx-auto">
         <h2 className="w-full text-4xl sm:text-5xl md:text-6xl lg:text-[64px] text-center font-medium font-['Space_Grotesk'] text-white leading-tight md:leading-[1.2] tracking-tight">
           Our Vision

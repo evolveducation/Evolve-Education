@@ -157,7 +157,7 @@ function App() {
                       id="feedback"
                       placeholder="Tell us everything. Don't hold back..."
                       rows={5}
-                      className="bg-white/5 border-white/10 text-white focus:ring-purple-500/50 focus:border-purple-500/50 transition-all resize-none shadow-inner"
+                      className="bg-white/5 border-white/10 text-[#000000] focus:ring-purple-500/50 focus:border-purple-500/50 transition-all resize-none shadow-inner"
                       {...register('feedback', {
                         required: 'The floor is yours!',
                         minLength: { value: 10, message: 'Go on, tell us a bit more (min 10 chars)' },

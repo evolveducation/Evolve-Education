@@ -109,7 +109,7 @@ function App() {
                         id="email"
                         type="email"
                         placeholder="you@example.com"
-                        className="bg-white/5 border-white/10 text-white h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
+                        className="bg-white/5 border-white/10 text-black h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
                         {...register('email', {
                           required: 'Where should we reply?',
                           pattern: { value: /^\S+@\S+$/i, message: 'That email looks a bit funky' },
@@ -127,7 +127,7 @@ function App() {
                         id="phone"
                         type="tel"
                         placeholder="Phone number"
-                        className="bg-white/5 border-white/10 text-white h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
+                        className="bg-white/5 border-white/10 text-black h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
                         {...register('phone', { required: 'Just in case we need to call!' })}
                       />
                       {errors.phone && <p className="text-xs text-red-400 mt-1 ml-1">{errors.phone.message}</p>}

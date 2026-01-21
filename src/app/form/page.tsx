@@ -142,7 +142,7 @@ function App() {
                     <Input
                       id="school"
                       placeholder="The University of Life (or actual name)"
-                      className="bg-white/5 border-white/10 text-white h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
+                      className="bg-white/5 border-white/10 text-black h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all"
                       {...register('school', { required: 'Your alma mater is required' })}
                     />
                     {errors.school && <p className="text-xs text-red-400 mt-1 ml-1">{errors.school.message}</p>}

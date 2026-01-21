@@ -93,7 +93,7 @@ function App() {
                     <Input
                       id="name"
                       placeholder="e.g. Alex Grayson"
-                      className="bg-white/5 border-white/10 text-white h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all shadow-inner"
+                      className="bg-white/5 border-white/10 text-black h-12 focus:ring-purple-500/50 focus:border-purple-500/50 transition-all shadow-inner"
                       {...register('name', { required: 'We need to know who you are!' })}
                     />
                     {errors.name && <p className="text-xs text-red-400 mt-1 ml-1">{errors.name.message}</p>}
